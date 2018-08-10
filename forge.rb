@@ -1,8 +1,8 @@
 class Forge < Formula
   desc "Continuous Delivery friendly CloudFormation deployment tool"
   homepage "https://github.com/nathandines/forge"
-  url "https://github.com/nathandines/forge/archive/v2.2.2.tar.gz"
-  sha256 "7175d895db007831966e6f36a14e5868e3db14c08313dd88cbad8a610e5b35a5"
+  url "https://github.com/nathandines/forge/archive/v2.2.3.tar.gz"
+  sha256 "e67e7588048e893926f901c6c579a524f88f2252f977dc335cc0d0734c7e81e3"
 
   bottle :unneeded
 
@@ -17,7 +17,8 @@ class Forge < Formula
 
     cd src_path do
       system "make", "deps"
-      system "make"
+      system "make", "build"
+      bin.mkpath
       bin.install "bin/forge"
       system bin/"forge", "gen-bash-completion", ">", bash_completion/"forge"
       system bin/"forge", "gen-zsh-completion", ">", zsh_completion/"forge"
