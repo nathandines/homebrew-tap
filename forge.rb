@@ -2,7 +2,7 @@ class Forge < Formula
   desc "Continuous Delivery friendly CloudFormation deployment tool"
   homepage "https://github.com/nathandines/forge"
   url "https://github.com/nathandines/forge/archive/v2.2.4.tar.gz"
-  sha256 "c362c89c26b14958c6e41891d7e9418ef3b30052cdeb31be6fc9cd4c72ec2335"
+  sha256 "c6c397a69c99d669e00fb597658e21e05d577b680fe6cfa933c9ab211c327f2c"
 
   bottle :unneeded
 
