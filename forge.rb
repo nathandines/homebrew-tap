@@ -16,7 +16,6 @@ class Forge < Formula
     src_path.install Dir["*"]
 
     cd src_path do
-      system "make", "deps"
       system "make", "build"
       bin.mkpath
       bin.install "bin/forge"
