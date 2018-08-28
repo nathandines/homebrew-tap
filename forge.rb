@@ -6,22 +6,17 @@ class Forge < Formula
 
   bottle :unneeded
 
-  depends_on "dep" => :build
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
+    system "make", "build"
 
-    src_path = buildpath/"src/github.com/nathandines/forge"
-    src_path.install Dir["*"]
+    bin.mkpath
+    bin.install "bin/forge"
 
-    cd src_path do
-      system "make", "build"
-      bin.mkpath
-      bin.install "bin/forge"
-    end
     (bash_completion/"forge").write(`#{bin}/forge gen-bash-completion`)
     (zsh_completion/"forge").write(`#{bin}/forge gen-zsh-completion`)
+
     prefix.install_metafiles
   end
 
